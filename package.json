@@ -1,0 +1,25 @@
+{
+  "name": "node-couch-qa",
+  "version": "0.0.0",
+  "description": "example qa app for couchbase live london",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "example",
+    "couchbase"
+  ],
+  "author": "Philipp Fehre <philipp.fehre@gmail.com>",
+  "license": "Apache",
+  "devDependencies": {
+    "mocha": "^1.18.0",
+    "request": "^2.34.0"
+  },
+  "dependencies": {
+    "express": "^3.4.8",
+    "couchbase": "^1.2.1",
+    "dotenv": "^0.2.5"
+  }
+}
