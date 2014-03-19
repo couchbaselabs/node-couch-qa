@@ -10,6 +10,10 @@ app.configure(function() {
   app.use(express.static(__dirname + "/public"))
   app.use(express.bodyParser())
   app.use(express.methodOverride())
+  app.use(express.cookieParser({ secret: process.env.SESSION_SECRET }))
+  app.use(express.cookieSession({ secret: process.env.SESSION_SECRET }))
+  app.set("views", __dirname + "/views")
+  app.set("view engine", "jade")
 })
 
 app.configure("development", function() {
