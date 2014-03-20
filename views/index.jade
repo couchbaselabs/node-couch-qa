@@ -1,10 +1,11 @@
-div.question
-  What is couchbases upcoming query language called?
-  ul.answers
-    li N1QL
-    li SQL
-    li CQL
-    li NoSQL
+extends layout
+block content
+  div#content(ng-controller="QuestionListController")
+    div.question(ng-repeat="question in questions") {{question.text}}
+      ul.answers
+        li(ng-repeat="answer in question.choices")
+          input(type="checkbox", ng-model="answer.state")
+          {{answer.text}}
 
 
 

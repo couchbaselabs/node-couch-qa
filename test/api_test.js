@@ -9,17 +9,31 @@ describe("API", function(){
     User.remove(User.generateId(ephemeralUser.username), done) // cleanup
   })
 
-  it("handles signup", function(done){
+  it("handles signup", function (done){
     request.post(helper.host + "/signup", {form: ephemeralUser}, function (err, res, body) {
       assert.equal(res.statusCode, 302) // redirect after signup
       done()
     })
   })
 
-  it("handles signin", function(done){
+  it("handles signin", function (done){
     request.post(helper.host + "/signin", {form: helper.credentials}, function (err, res, body) {
       assert.equal(res.statusCode, 302) // redirect after signin
       done()
     })
+  })
+
+  it("loads questions", function (done) {
+    var j = request.jar()
+    var req = request.defaults({jar:j})
+    req.post(helper.host + "/signin", {form: helper.credentials}, function (err, res, body) {
+      req.get(helper.host + "/questions", function(err, res, body) {
+        body = JSON.parse(body)
+        assert(body[0].text)
+        done()
+      })
+    })
+
+
   })
 })
