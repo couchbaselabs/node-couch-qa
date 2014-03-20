@@ -1,10 +1,12 @@
+div #{message}
+
 h1 Sign in
 
 form#signin-form(name="signin", action="/signin", method="post")
   p Username
     input#username-field(type="text", name="username")
   p Password
-    input#password-field(type="text", name="password")
+    input#password-field(type="password", name="password")
   input(type="submit", value="Sign in")
 
 h1 Sign up
@@ -13,7 +15,7 @@ form#signup-form(name="signup", action="/signup", method="post")
   p Username
     input#username-field(type="text", name="username")
   p Password
-    input#password-field(type="text", name="password")
+    input#password-field(type="password", name="password")
   input(type="submit", value="Sign up")
 
 
