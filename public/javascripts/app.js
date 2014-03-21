@@ -9,7 +9,9 @@ CBQA.controller("QuestionListController", function ($scope, $http) {
     if (newValue) {
       $http
       .post("/questions", JSON.stringify(newValue))
-      .success(function () { })
+      .success(function (data) {
+        $scope.questions = data
+      })
       .error(function () {
         alert("Something went horribly wrong, please reload.")
       })
