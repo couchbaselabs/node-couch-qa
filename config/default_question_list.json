@@ -1,0 +1,22 @@
+{ "questions": [
+    {
+      "id": "1",
+      "text": "What is couchbases upcoming query language called?",
+      "choices": [
+        {"text": "N1QL", "state": false, "count": 0, "id": "a"},
+        {"text": "SQL", "state": false, "count": 0, "id": "b"},
+        {"text": "CQL", "state": false, "count": 0, "id": "c"},
+        {"text": "NoSQL", "state": false, "count": 0, "id": "d"}
+      ]
+    },
+    {
+      "id": "2",
+      "text": "What is couchbase?",
+      "choices": [
+        {"text": "Document database", "state": false, "count": 0, "id": "a"},
+        {"text": "Key/Value store", "state": false, "count": 0, "id": "b"},
+        {"text": "Cache", "state": false, "count": 0, "id": "c"}
+      ]
+    }
+  ]
+}

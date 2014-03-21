@@ -5,7 +5,6 @@ block content
       ul.answers
         li(ng-repeat="answer in question.choices")
           input(type="checkbox", ng-model="answer.state")
-          {{answer.text}}
-
-
+          span.anser-text {{answer.text}}
+          span.answer-count ({{answer.count}} users selected this)
 

@@ -5,6 +5,14 @@ CBQA.controller("QuestionListController", function ($scope, $http) {
     $scope.questions = data
   })
 
-  $scope.$watch("questions", function (newValue, oldValue) {
+  $scope.$watch("questions", function (newValue) {
+    if (newValue) {
+      $http
+      .post("/questions", JSON.stringify(newValue))
+      .success(function () { })
+      .error(function () {
+        alert("Something went horribly wrong, please reload.")
+      })
+    }
   }, true)
 })

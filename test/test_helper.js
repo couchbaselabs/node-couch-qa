@@ -6,6 +6,7 @@ var port = process.env.PORT || 3001
 module.exports = helper = {
   host: "http://localhost:" + port,
   credentials: {username:"my_user", password: "my_password"},
+  user: null,
   app: app
 }
 
@@ -16,7 +17,10 @@ var User = require("../lib/user")
  */
 before(function(done) {
   app.listen(port)
-  User.create(helper.credentials, done)
+  User.create(helper.credentials, function (err, user) {
+    helper.user = user
+    done()
+  })
 })
 
 after(function (done) {
