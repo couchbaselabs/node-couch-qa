@@ -1,5 +1,4 @@
 var helper = require("./test_helper")
-var fs = require("fs")
 var assert = require("assert")
 var request = require("request")
 var User = require("../lib/user")
@@ -26,32 +25,26 @@ describe("API", function(){
 
   describe("questions", function () {
     var req
-    before(function (done) {
+    var list
+    beforeEach(function (done) {
       var j = request.jar()
       req = request.defaults({jar:j})
 
-      var path = __dirname + "/../config/default_question_list.json"
-      var data = fs.readFileSync(path, {encoding: "utf8"})
-      list = JSON.parse(data)
-      list.questions[0].choices[0].state = true
-
-      req.post(helper.host + "/signin", {form: helper.credentials}, done)
-    })
-
-    it("loads questions", function (done) {
-      req.get(helper.host + "/questions", function(err, res, body) {
-        body = JSON.parse(body)
-        assert(body[0].text)
-        done()
+      req.post(helper.host + "/signin", {form: helper.credentials}, function (err, res, body){
+        req.get(helper.host + "/questions", function(err, res, body) {
+          list = JSON.parse(body)
+          done()
+        })
       })
     })
 
     it("saves the questions", function (done) {
-      req.post(helper.host + "/questions", {json: list.questions}, function (err, res, body) {
+      list.questions[0].choices[0].state = true
+      req.post(helper.host + "/questions", {json: list}, function (err, res, body) {
         assert.equal(res.statusCode, 200)
         req.get(helper.host + "/questions", function(err, res, body) {
           body = JSON.parse(body)
-          assert(body[0].choices[0].state)
+          assert(body.questions[0].choices[0].state)
           done()
         })
       })
