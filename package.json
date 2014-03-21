@@ -6,6 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha",
     "start": "node index.js",
+    "setup-views": "node ./scripts/setup_views.js",
     "dev": "./node_modules/.bin/node-dev index.js"
   },
   "keywords": [
