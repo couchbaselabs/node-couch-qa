@@ -9,4 +9,14 @@ html(lang=en, ng-app="CBQA")
     script(src="/javascripts/angular.min.js")
     script(src="/javascripts/app.js")
   body
-    block content
+    div.container
+      div.header
+        h3.text-muted Couchbase Live [London]
+
+      div.jumbotron
+        h1.jumbo-text Quiz
+
+      block content
+
+      div.footer
+        p © Couchbase 2014

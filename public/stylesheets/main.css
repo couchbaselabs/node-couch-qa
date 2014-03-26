@@ -1,0 +1,23 @@
+.jumbotron {
+  text-align: center;
+  color: #265089;
+  border-bottom: 1px solid #e5e5e5;
+  height: 250px;
+  background-image: url(../images/banner_london_conf.jpg);
+  background: cover;
+}
+
+.jumbo-text {
+  margin-top: 0px;
+}
+
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}

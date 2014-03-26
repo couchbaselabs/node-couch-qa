@@ -1,10 +1,18 @@
 extends layout
 block content
   div#content(ng-controller="QuestionListController")
-    div.question(ng-repeat="question in questions") {{question.text}}
-      ul.answers
-        li(ng-repeat="answer in question.choices")
-          input(type="checkbox", ng-model="answer.state")
-          span.anser-text {{answer.text}}
-          span.answer-count ({{answer.count}} users selected this)
+    div.panel.panel-default.question(ng-repeat="question in questions")
+      div.panel-heading
+        h3.panel-title {{question.text}}
+      div.panel-body
+        form.form-horizontal(role="form", ng-repeat="answer in question.choices")
+          div.form-group
+            label.col-sm-2.control-label {{ answer.id | uppercase }}
+            div.col-sm-8
+              div.checkbox
+                label
+                  input(type="checkbox", ng-model="answer.state")
+                  {{answer.text}}
+            div.col-sm-2
+              span.badge.answer-count {{answer.count}}
 
