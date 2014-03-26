@@ -1,5 +1,4 @@
 var express = require("express")
-var cookieSession = require("./lib/cookie_session")
 var app = express()
 
 var dotenv = require('dotenv');
@@ -11,8 +10,8 @@ app.configure(function() {
   app.use(express.static(__dirname + "/public"))
   app.use(express.bodyParser())
   app.use(express.methodOverride())
-  app.use(express.cookieParser(process.env.SESSION_SECRET))
-  app.use(cookieSession("connect.sess"))
+  app.use(express.cookieParser(process.env.SESSION_SECRET));
+  app.use(express.session({secret: process.env.SESSION_SECRET}));
   app.set("views", __dirname + "/views")
   app.set("view engine", "jade")
 })

@@ -1,23 +1,29 @@
 extends layout
 block content
-  div #{message}
+  if message
+    div.alert.alert-danger.alert-dismissable 
+       button.close(type="button", class="close", data-dismiss="alert",  aria-hidden="true") &times;
+       p #{message}
 
   h1 Sign in
 
-  form#signin-form(name="signin", action="/signin", method="post")
-    p Username
-      input#username-field(type="text", name="username")
-    p Password
-      input#password-field(type="password", name="password")
-    input(type="submit", value="Sign in")
+  form#signin-form(name="signin", action="/signin", method="post", role="form")
+    div.form-group
+      label(for="username") Username
+      input.form-control(type="text", name="username", id="signin-username", placeholder="Krusty")
+    div.form-group
+      label(for="password") Password
+      input.form-control(type="password", name="password", id="signin-password", placeholder="the-clown-123")
+    button.btn.btn-default(type="submit") Submit
 
   h1 Sign up
 
-  form#signup-form(name="signup", action="/signup", method="post")
-    p Username
-      input#username-field(type="text", name="username")
-    p Password
-      input#password-field(type="password", name="password")
-    input(type="submit", value="Sign up")
-
+  form#signup-form(name="signup", action="/signup", method="post", role="form")
+    div.form-group
+      label(for="username") Username
+      input.form-control(type="text", name="username", id="signup-username", placeholder="Krusty")
+    div.form-group
+      label(for="password") Password
+      input.form-control(type="password", name="password", id="signup-password", placeholder="the-clown-123")
+    button.btn.btn-default(type="submit") Submit
 

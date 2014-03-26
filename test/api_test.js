@@ -40,6 +40,7 @@ describe("API", function(){
 
     it("loads questions", function (done) {
       req.get(helper.host + "/questions", function(err, res, body) {
+        console.log(body)
         body = JSON.parse(body)
         assert(body[0].text)
         done()
