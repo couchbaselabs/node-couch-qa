@@ -13,7 +13,7 @@ CBQA.controller("QuestionListController", function ($scope, $http) {
         $scope.questions = data
       })
       .error(function () {
-        alert("Something went horribly wrong, please reload.")
+        alert("Sorry something went wrong, please reload.")
       })
     }
   }, true)
