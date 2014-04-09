@@ -56,7 +56,7 @@ describe("QuestionList", function (){
   it("fills the list with counts", function (done) {
     QuestionList.saveForUser(helper.user, list, function (err) {
       QuestionList.forUser(helper.user, function (err, list) {
-        assert.equal(list.questions[0].choices[0].count, 2)
+        assert.equal(list.questions[0].choices[0].count, 1)
         done()
       })
     })

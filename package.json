@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "express": "^3.4.8",
-    "couchbase": "^1.2.1",
+    "couchbase": "git://github.com/sideshowcoder/couchnode.git#JSCBC-104-added-flush",
     "dotenv": "^0.2.5",
     "jade": "^1.3.0",
     "bcrypt": "^0.7.7"

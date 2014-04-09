@@ -12,6 +12,9 @@ configure the app via .env file, or SHELL variables, see sample.env for details
     $ cp sample.env .env
     $ $EDITOR .env
 
+setup the needed Couchbase buckets by visiting the
+[webinterface](http://localhost:8091)
+
 setup the views
 
     $ npm run setup-views

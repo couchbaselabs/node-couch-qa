@@ -1,5 +1,6 @@
 process.env.NODE_ENV = "test"
 var app = require("../")
+var db = require("../lib/db")
 // port 3001 for tests to not interfere with a dev server running on 3000
 var port = process.env.PORT || 3001
 
@@ -29,9 +30,7 @@ before(function(done) {
 })
 
 after(function (done) {
-  User.remove(User.generateId(helper.credentials.username), function () {
-    User.remove(User.generateId(helper.credentials2.username), done)
-  })
+  db.flush(done)
 })
 
 
