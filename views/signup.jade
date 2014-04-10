@@ -1,7 +1,7 @@
 extends layout
 block content
   if message
-    div.alert.alert-danger.alert-dismissable 
+    div.alert.alert-danger.alert-dismissable
        button.close(type="button", class="close", data-dismiss="alert",  aria-hidden="true") &times;
        p #{message}
 
@@ -15,6 +15,12 @@ block content
       label(for="password") Password
       input.form-control(type="password", name="password", id="signin-password", placeholder="the-clown-123")
     button.btn.btn-default(type="submit") Submit
+
+  h2 With Facebook
+  div#fb-root
+  button.btn.btn-facebook.fb-login-button#login-button(data-max-rows="1", data-size="medium", data-show-faces="false", data-auto-logout-link="false")
+    i.fa.fa-facebook
+      &nbsp;| &nbsp;Connect with Facebook
 
   h1 Sign up
 

@@ -3,11 +3,16 @@ html(lang=en, ng-app="CBQA")
   head
     title Couchbase QA
     link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet", href="/stylesheets/social-buttons.css")
+    link(rel="stylesheet", href="/stylesheets/font-awesome.min.css")
     link(rel="stylesheet", href="/stylesheets/main.css")
     script(src="/javascripts/jquery-1.11.0.min.js")
     script(src="/javascripts/bootstrap.min.js")
     script(src="/javascripts/angular.min.js")
     script(src="/javascripts/app.js")
+    script(type="text/javascript").
+      FB_APP_ID = #{process.env.FB_APP_ID}
+    script(src="/javascripts/facebook-login.js")
   body
     div.container
       div.header
