@@ -8,8 +8,8 @@ var port = process.env.PORT || 3000
 
 app.configure(function() {
   app.use(express.static(__dirname + "/public"))
-  app.use(express.bodyParser())
-  app.use(express.methodOverride())
+  app.use(express.json())
+  app.use(express.urlencoded())
   app.use(express.cookieParser(process.env.SESSION_SECRET));
   app.use(express.session({secret: process.env.SESSION_SECRET}));
   app.set("views", __dirname + "/views")
