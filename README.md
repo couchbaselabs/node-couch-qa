@@ -15,9 +15,15 @@ configure the app via .env file, or SHELL variables, see sample.env for details
 setup the needed Couchbase buckets by visiting the
 [webinterface](http://localhost:8091)
 
-setup the views
+setup the views, set NODE\_ENV to the environment you want the views setup for
 
     $ npm run setup-views
+
+will set them up to the environment specified in .env
+
+    $ env NODE_ENV=test npm run setup-views
+
+will set them up for the test environment
 
 run via the build in scripts
 
