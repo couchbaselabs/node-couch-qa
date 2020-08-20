@@ -20,7 +20,7 @@
     "request": "^2.34.0"
   },
   "dependencies": {
-    "bcrypt": "^0.7.7",
+    "bcrypt": "^5.0.0",
     "couchbase": "2.0.0-dp1",
     "dotenv": "^0.2.5",
     "express": "^3.4.8",
